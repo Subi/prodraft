@@ -89,3 +89,22 @@
 .createDraftButton:hover {
     background-color: rgba(255, 209, 94, 1);
 }
+
+
+/* .spectatorLink {
+    padding: 8px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family: "Montserrat Light", serif;
+    color: white;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid rgba(210, 210, 210, 0.5);
+    background: transparent;
+    width: 40%;
+}
+
+
+.spectatorLink:hover {
+    cursor: pointer;
+} */
