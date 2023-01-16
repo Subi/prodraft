@@ -21,9 +21,9 @@ This project was inspired by the existing draft tool [Draftlol](https://draftlol
 - [x] Generate draft links after a new draft is created.
 
 - [x] Determine how game state will be created/stored
-     [ ] Redis 🟥
-     [x] Firebase 🔥 
-     [ ] Mongodb  🟩 
+     - Redis 🟥
+     - Firebase 🔥  ✔
+     - Mongodb  🟩 
 
 - [x] Setup Database to store rooms created and verify they exist
 
