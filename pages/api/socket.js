@@ -12,7 +12,13 @@ const SocketHandler = (req, res) => {
 
 
         io.on('connection', socket => {
-            console.log(socket.id)
+            socket.on("joinroom", id => {
+                const room = io.sockets.adapter.rooms.get(id)
+                if (!room) { // This might be optional because we can joinroom whenever 
+                    console.log(`${socket.id} has connected to room ${id}`)
+                    socket.join(id)
+                }
+            })
         })
     }
 

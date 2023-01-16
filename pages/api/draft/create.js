@@ -11,7 +11,7 @@ const createDraftHandler = (req, res) => {
 
 const createDraftRoom = (blueName, redName) => {
     return {
-        roomId: Math.random().toString(20).slice(8),
+        Id: Math.random().toString(20).slice(8),
         blueTeam: {
             Name: blueName,
             Id: Math.random().toString(25).slice(7)

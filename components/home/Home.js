@@ -33,20 +33,18 @@ function Home() {
 
         const data = await response.json()
 
-        setBlueTeamLink(`localhost:3000/draft/${data.roomId}/${data.blueTeam.Id}`)
-        setRedTeamLink(`localhost:3000/draft/${data.roomId}/${data.redTeam.Id}`)
+        setBlueTeamLink(`localhost:3000/draft/${data.Id}/${data.blueTeam.Id}`)
+        setRedTeamLink(`localhost:3000/draft/${data.Id}/${data.redTeam.Id}`)
 
 
 
-        setDoc(doc(database, 'rooms', data.roomId), data).then(() => { // Break this up later into it's own function ?
-            console.log(`Draft ${data.roomId} has been created`)
+        setDoc(doc(database, 'rooms', data.Id), data).then(() => { // Break this up later into it's own function ?
+            console.log(`Draft ${data.Id} has been created`)
         }).catch((e) => {
             console.log("Error occured saving draft to firebase :", e)
         })
 
     }
-
-
 
 
 

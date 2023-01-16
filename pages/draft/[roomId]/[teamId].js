@@ -1,33 +1,74 @@
-import { useEffect } from "react"
+import { database } from "@/firebase/config"
+import { async } from "@firebase/util"
+import { doc, getDoc } from "firebase/firestore"
+import { useEffect, useState } from "react"
 import io from 'socket.io-client'
-let socket
 
-function TeamView() {
-
-    useEffect(() => socketInitializer, [])
-
+function TeamView(props) {
+    const [room, setRoom] = useState(props.room)
+    const [socket, setSocket] = useState(null)
 
     const socketInitializer = async () => {
         await fetch('/api/socket')
-        socket = io()
+        const newSocket = io()
+        setSocket(newSocket)
     }
+
+
+    useEffect(() => {
+        if (!room) return
+
+        socketInitializer()
+    }, [room])
+
 
 
     useEffect(() => {
         if (!socket) return
         socket.on('connect', () => {
-            console.log("socket has connected")
+            socket.emit('joinroom', room.Id)
         })
     }, [socket])
 
-
-
-
     return (
-        <p> This is the view for the teams </p>
+        <>
+            {!room ? "not a valid room" : <p>This is a valid room</p>}
+        </>
     )
 }
 
+
+
+
+export const getStaticProps = async (context) => { // revist this to address if request fails can't send undefined value as prop 
+
+    const { roomId } = context.params
+
+
+    const room = await getDoc(doc(database, "rooms", roomId)).then((snap) => {
+        if (!snap.exists()) return
+
+        return snap.data()
+    })
+    if (!room) return {  // Hacky 🤷‍♀️
+        props: {
+            room: null
+        }
+    }
+
+    return {
+        props: { room }
+    }
+
+}
+
+
+export const getStaticPaths = async () => {
+    return {
+        paths: [],
+        fallback: 'blocking'
+    }
+}
 
 
 
