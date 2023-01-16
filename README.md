@@ -14,4 +14,5 @@
      - Firebase 🔥
      - Mongodb  🟩
 
-- [ ] Create unique rooms for draft room created    
+- [ ] Create unique rooms for draft room created
+- [ ] Users can invite other players to room

@@ -30,8 +30,8 @@ function Home() {
         })
 
         const data = await response.json()
-        setBlueTeamLink(`localhost:3000/${data.roomId}/${data.blueTeam.Id}`)
-        setRedTeamLink(`localhost:3000/${data.roomId}/${data.redTeam.Id}`)
+        setBlueTeamLink(`localhost:3000/draft/${data.roomId}/${data.blueTeam.Id}`)
+        setRedTeamLink(`localhost:3000/draft/${data.roomId}/${data.redTeam.Id}`)
     }
 
 
