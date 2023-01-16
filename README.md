@@ -29,6 +29,8 @@ This project was inspired by the existing draft tool [Draftlol](https://draftlol
 
 - [x] Setup Socket io server and accept clients to connect
 
+- [ ] Look into generating specific data before component / page loads (nextjs features)
+
 - [ ] Create unique socket rooms based on generated roomId
 
 - [ ] Only load page if a draft exist to the corresponding roomId (prevent people from brute forcing lobbies through url)
