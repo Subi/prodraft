@@ -4,6 +4,8 @@ import LandingPageIcon from "../../public/images/landing-page-icon.png"
 import TeamNameInput from "./TeamNameInput";
 import TeamLinks from "./TeamLinks";
 import { useState } from "react";
+import { setDoc, doc } from "firebase/firestore";
+import { database } from "@/firebase/config";
 
 
 
@@ -30,9 +32,23 @@ function Home() {
         })
 
         const data = await response.json()
+
         setBlueTeamLink(`localhost:3000/draft/${data.roomId}/${data.blueTeam.Id}`)
         setRedTeamLink(`localhost:3000/draft/${data.roomId}/${data.redTeam.Id}`)
+
+
+
+        setDoc(doc(database, 'rooms', data.roomId), data).then(() => { // Break this up later into it's own function ?
+            console.log(`Draft ${data.roomId} has been created`)
+        }).catch((e) => {
+            console.log("Error occured saving draft to firebase :", e)
+        })
+
     }
+
+
+
+
 
 
 

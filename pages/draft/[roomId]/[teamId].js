@@ -3,17 +3,23 @@ import io from 'socket.io-client'
 let socket
 
 function TeamView() {
-    const socketInitializer = async () => {
 
+    useEffect(() => socketInitializer, [])
+
+
+    const socketInitializer = async () => {
         await fetch('/api/socket')
         socket = io()
-
-        socket.on('connect' , () => {
-            console.log("connected")
-        })
     }
-    
-    useEffect(() => socketInitializer(), [])
+
+
+    useEffect(() => {
+        if (!socket) return
+        socket.on('connect', () => {
+            console.log("socket has connected")
+        })
+    }, [socket])
+
 
 
 
