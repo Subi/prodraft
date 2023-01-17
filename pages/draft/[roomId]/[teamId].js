@@ -1,3 +1,4 @@
+import Draft from "@/components/draft/Draft"
 import { database } from "@/firebase/config"
 import { async } from "@firebase/util"
 import { doc, getDoc } from "firebase/firestore"
@@ -32,7 +33,7 @@ function TeamView(props) {
 
     return (
         <>
-            {!room ? "not a valid room" : <p>This is a valid room</p>}
+            {!room ? "not a valid room" : <Draft data={props} />}
         </>
     )
 }
