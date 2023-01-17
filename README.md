@@ -36,3 +36,7 @@ This project was inspired by the existing draft tool [Draftlol](https://draftlol
 - [x] Only load page if a draft exist to the corresponding roomId (prevent people from brute forcing lobbies through url)
 
 - [ ] Build out draft user interface
+
+- [ ] Build out placeholder for each champions on each side
+
+- [ ] Generate champion select and display that data
