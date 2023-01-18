@@ -37,6 +37,8 @@ This project was inspired by the existing draft tool [Draftlol](https://draftlol
 
 - [ ] Build out draft user interface
 
-- [ ] Build out placeholder for each champions on each side
+- [x] Build out placeholder for each champions on each side
+
+- [ ] Build out placeholder for champion bans 
 
 - [ ] Generate champion select and display that data

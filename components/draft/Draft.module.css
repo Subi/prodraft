@@ -30,3 +30,34 @@
     color: black;
     padding: 15px 0
 }
+
+
+.championContentContainer {
+    width: 100%;
+    display: flex;
+
+}
+
+.blueTeamPicksContainer {
+    width: 22%;
+}
+
+.blueTeamPicksContainer>.championSplash {
+    transform: scaleX(-1);
+}
+
+.championSplash {
+    width: 100%;
+    height: 190px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    /* possibly remove for better correct positioning (get feedback) */
+}
+
+.championSplash img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
