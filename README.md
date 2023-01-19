@@ -39,6 +39,12 @@ This project was inspired by the existing draft tool [Draftlol](https://draftlol
 
 - [x] Build out placeholder for each champions on each side
 
-- [ ] Build out placeholder for champion bans 
+- [x] Build out placeholder for champion bans 
 
 - [ ] Generate champion select and display that data
+
+- [ ] Build out ready button 
+
+- [ ] Play around with a few design ideas
+
+- [ ] Begin game logic 

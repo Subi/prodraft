@@ -6,11 +6,18 @@ function ChampionContent() {
     return (
         <div className={classes.championContentContainer}>
             <div className={classes.blueTeamPicksContainer}>
-                <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/24/24000.jpg"} />
-                <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/57/57000.jpg"} />
-                <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/38/38000.jpg"} />
+                <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/114/114000.jpg"} />
+                <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/62/62000.jpg"} />
+                <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/127/127000.jpg"} />
                 <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/236/236000.jpg"} />
                 <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/267/267000.jpg"} />
+            </div>
+            <div className={classes.redTeamPicksContainer}>
+                <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/126/126000.jpg"} />
+                <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/254/254000.jpg"} />
+                <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/103/103000.jpg"} />
+                <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/221/221000.jpg"} />
+                <ChampionSplash image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-splashes/117/117000.jpg "} />
             </div>
         </div>
     )
