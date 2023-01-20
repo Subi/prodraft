@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.gyazo.com/45f1dc176186364c6b7fa047d67fb1e4.jpg" alt="ProDraft"  width="250" height="1920" />
+    <img src="https://i.gyazo.com/45f1dc176186364c6b7fa047d67fb1e4.jpg" alt="ProDraft"  width="250" />
   </a>
 </p>
 
@@ -41,9 +41,9 @@ This project was inspired by the existing draft tool [Draftlol](https://draftlol
 
 - [x] Build out placeholder for champion bans 
 
-- [ ] Generate champion select and display that data
+- [x] Generate champion select and display that data
 
-- [ ] Build out ready button 
+- [x] Build out ready button 
 
 - [ ] Play around with a few design ideas
 
