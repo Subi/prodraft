@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.gyazo.com/8684f6f4f16a74a9d199a7676eec1314.jpg" alt="ProDraft"  width="250" />
+    <img src="https://i.gyazo.com/45f1dc176186364c6b7fa047d67fb1e4.jpg" alt="ProDraft"  width="250" height="1920" />
   </a>
 </p>
 

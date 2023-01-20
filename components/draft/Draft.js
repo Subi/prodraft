@@ -6,7 +6,7 @@ function Draft({ data }) {
     return (
         <>
             <Header blueTeam={data.room.blueTeam} redTeam={data.room.redTeam} />
-            <ChampionContent />
+            <ChampionContent champions={data.championsArr} />
             <Footer />
         </>
     )

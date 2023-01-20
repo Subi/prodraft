@@ -12,6 +12,11 @@ function Footer() {
                 <BannedChampion image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/120.png"} />
                 <BannedChampion image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/145.png"} />
             </div>
+            <div className={classes.readyButtonContainer}>
+                <button className={classes.readyButton}>
+                    Ready
+                </button>
+            </div>
             <div className={classes.redBanContainer}>
                 <BannedChampion image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/1.png"} />
                 <BannedChampion image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/112.png"} />
@@ -19,7 +24,7 @@ function Footer() {
                 <BannedChampion image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/120.png"} />
                 <BannedChampion image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/145.png"} />
             </div>
-        </div>
+        </div >
     )
 }
 

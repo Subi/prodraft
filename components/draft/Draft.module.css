@@ -35,7 +35,89 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
 
+.championCarouselContainer {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 60%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.championsCarousel {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 90%;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 790px;
+}
+
+
+.championsCarousel::-webkit-scrollbar {
+    width: 18px;
+    border-radius: 20px;
+}
+
+.championsCarousel::-webkit-scrollbar-track {
+    background: #000915;
+    border-radius: 20px;
+}
+
+.championsCarousel::-webkit-scrollbar-thumb {
+    width: 24px;
+    background: rgba(255, 255, 255, .1);
+    border: 5px solid #000915;
+    border-radius: 15px;
+}
+
+.filterContainer {
+    display: flex;
+    width: 100%;
+    margin: 0 0 8px 40px;
+    justify-content: space-between;
+}
+
+.rolesFilterContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 18%;
+    margin-left: 50px;
+}
+
+.searchFilterContainer {
+    width: 25%;
+    margin-right: 118px;
+}
+
+.searchBarFilter {
+    margin-top: 5px;
+    padding: 4px;
+    font-family: "Montserrat SemiBold";
+    letter-spacing: 1px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid rgba(219, 219, 219, 0.2);
+    width: 80%;
+    text-transform: capitalize;
+}
+
+.searchbarFilter::placeholder {
+    font-family: "Montserrat Light";
+    color: rgba(200, 200, 200, 0.5);
+}
+
+.championOptions {
+    display: grid;
+    grid-template-columns: repeat(10, 125px);
+    grid-row-gap: 8px;
+    padding: 0 17px;
 }
 
 .blueTeamPicksContainer,
@@ -83,6 +165,26 @@
 
 .blueBanContainer>.bannedChampion {
     transform: skew(-2deg);
+}
+
+
+.readyButtonContainer {
+    margin-top: 55px
+}
+
+.readyButton {
+    letter-spacing: 1px;
+    font-family: "Montserrat SemiBold", serif;
+    font-size: 19px;
+    background: white;
+    transform: skew(-5deg);
+    padding: 20px 90px;
+    text-decoration: none;
+    border: none;
+}
+
+.readyButton:hover {
+    background-color: rgba(255, 209, 94, 1);
 }
 
 .redBanContainer {

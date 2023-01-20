@@ -41,16 +41,31 @@ function TeamView(props) {
 
 
 
-export const getStaticProps = async (context) => { // revist this to address if request fails can't send undefined value as prop 
+export const getStaticProps = async (context) => {
 
     const { roomId } = context.params
-
+    const championsArr = []
 
     const room = await getDoc(doc(database, "rooms", roomId)).then((snap) => {
         if (!snap.exists()) return
 
         return snap.data()
     })
+
+    const response = await fetch("https://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/champion.json", {
+        method: "GET"
+    })
+    const { data } = await response.json()
+
+    for (let champion in data) { // do i need to actually do this or can I just pass the full data back through props 🤔
+        championsArr.push({
+            name: data[champion].name,
+            key: data[champion].key,
+            id: data[champion].id,
+            image: data[champion].image
+        })
+    }
+
     if (!room) return {  // Hacky 🤷‍♀️
         props: {
             room: null
@@ -58,7 +73,7 @@ export const getStaticProps = async (context) => { // revist this to address if 
     }
 
     return {
-        props: { room }
+        props: { room, championsArr }
     }
 
 }
