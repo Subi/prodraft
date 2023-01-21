@@ -2,7 +2,13 @@ import BannedChampion from './BannedChampion'
 import classes from './Draft.module.css'
 
 
-function Footer() {
+function Footer({ dispatch }) {
+
+
+
+
+
+
     return (
         <div className={classes.footer}>
             <div className={classes.blueBanContainer}>
@@ -13,7 +19,7 @@ function Footer() {
                 <BannedChampion image={"https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-icons/145.png"} />
             </div>
             <div className={classes.readyButtonContainer}>
-                <button className={classes.readyButton}>
+                <button className={classes.readyButton} onClick={(e) => { dispatch({ type: "READY", paylod: "this is a test" }) }} >
                     Ready
                 </button>
             </div>

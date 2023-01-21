@@ -12,13 +12,26 @@ const createDraftHandler = (req, res) => {
 const createDraftRoom = (blueName, redName) => {
     return {
         Id: Math.random().toString(20).slice(8),
+        turn: 0,
+        timeLeft: 30,
+        currentTeam: null,
         blueTeam: {
             Name: blueName,
-            Id: Math.random().toString(25).slice(7)
+            Id: Math.random().toString(25).slice(7),
+            currentAction: "INITIALIZING",
+            isReady: false,
+            isTurn: false,
+            picks: [],
+            bans: []
         },
         redTeam: {
             Name: redName,
-            Id: Math.random().toString(25).slice(7)
+            Id: Math.random().toString(25).slice(7),
+            currentAction: "INITIALIZING",
+            isReady: false,
+            isTurn: false,
+            picks: [],
+            bans: []
         }
     }
 }

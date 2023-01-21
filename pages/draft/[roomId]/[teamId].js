@@ -2,11 +2,25 @@ import Draft from "@/components/draft/Draft"
 import { database } from "@/firebase/config"
 import { async } from "@firebase/util"
 import { doc, getDoc } from "firebase/firestore"
-import { useEffect, useState } from "react"
+import { useEffect, useReducer, useState } from "react"
+import { useRouter } from "next/router"
 import io from 'socket.io-client'
 
+
+const reducer = (state, action) => {
+    switch (action.type) {
+        case "READY":
+
+    }
+}
+
+const getCurrentTeam = (teamId, room) => {
+    return (teamId === room.blueTeam.Id ? "blueTeam" : "redTeam")
+}
+
+
 function TeamView(props) {
-    const [room, setRoom] = useState(props.room)
+    const [room, dispatch] = useReducer(reducer, props.room)
     const [socket, setSocket] = useState(null)
 
     const socketInitializer = async () => {
@@ -22,8 +36,6 @@ function TeamView(props) {
         socketInitializer()
     }, [room])
 
-
-
     useEffect(() => {
         if (!socket) return
         socket.on('connect', () => {
@@ -31,9 +43,14 @@ function TeamView(props) {
         })
     }, [socket])
 
+
+    console.log(props.room)
+
+
+
     return (
         <>
-            {!room ? "not a valid room" : <Draft data={props} />}
+            {!room ? "not a valid room" : <Draft data={props} dispatch={dispatch} />}
         </>
     )
 }
@@ -43,7 +60,7 @@ function TeamView(props) {
 
 export const getStaticProps = async (context) => {
 
-    const { roomId } = context.params
+    const { roomId, teamId } = context.params
     const championsArr = []
 
     const room = await getDoc(doc(database, "rooms", roomId)).then((snap) => {
@@ -66,12 +83,13 @@ export const getStaticProps = async (context) => {
         })
     }
 
-    if (!room) return {  // Hacky 🤷‍♀️
+    if (!room) return {  // Hacky 🤷‍♀️ 
         props: {
             room: null
         }
     }
 
+    room.currentTeam = getCurrentTeam(teamId, room)
     return {
         props: { room, championsArr }
     }
