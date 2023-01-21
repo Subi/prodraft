@@ -46,6 +46,6 @@ This project was inspired by the existing draft tool [Draftlol](https://draftlol
 - [x] Build out ready button 
 
 - [x] Begin game logic
-      - Allow user to ready up by clicking ready button
-      - Let opposing oppenent know when other player is ready
+    - Allow user to ready up by clicking ready button
+    - Let opposing oppenent know when other player is ready
     
